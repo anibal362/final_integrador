@@ -1,0 +1,30 @@
+﻿@model Integrador_Reserva.Models.UsuarioCanchaViewModel
+@{
+    var grid = new WebGrid();
+    grid.Bind(Model.listaCancha);
+}
+
+<div id="content-inventario-grid">
+    @grid.GetHtml(
+        headerStyle: "", rowStyle: "", alternatingRowStyle: "", footerStyle: "",
+        htmlAttributes: new { id = "IDGRID", @class = "table table - striped table - bordered table - condensed" },
+        mode: WebGridPagerModes.All,
+        firstText: "<< Primera",
+        previousText: "< Anterior",
+        nextText: "Siguiente >",
+        lastText: "Última >>",
+        columns: grid.Columns(
+
+            grid.Column("cancha_nombre", "nombre", canSort: true, style: "person"),
+            grid.Column("cancha_descripcion", "descripcion", canSort: true, style: "person"),
+            grid.Column("cancha_tipo", "tipo", canSort: true, style: "person"),
+            grid.Column("cancha_distrito", "distrito", canSort: true, style: "person"),
+            grid.Column(header: "Acciones", format: (item) => new HtmlString(
+                                        Html.ActionLink("Editar", "Edit", new {
+                                            id = item.cancha_id
+                                        }).ToString() + " | " +
+                        Html.ActionLink("Eliminar", "Delete", new { id = item.cancha_id }).ToString() + " | "
+                    )
+            )
+    ))
+</div>

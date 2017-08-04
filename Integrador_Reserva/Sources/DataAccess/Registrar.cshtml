@@ -1,0 +1,56 @@
+﻿@model ReservaMVC.Models.UsuarioViewModel
+@{
+    ViewBag.Title = "Registrar";
+}
+
+<h2>Registrar Usuario</h2>
+
+@using (Html.BeginForm("Registrar", "Usuario", FormMethod.Post, new { @id = "frm-registroUsuario", @class = "well" }))
+{
+    <h2>Registro de Usuarios</h2>
+    @Html.LabelFor(user => user.usuario.usuario_id)
+    @Html.TextBoxFor(user => user.usuario.usuario_id, new { @id = "Txtusuario_id", @maxlength = 9, @minlength = 1 } )
+    <br />
+    @Html.LabelFor( user => user.usuario.usuario_nombre )
+    @Html.TextBoxFor(user => user.usuario.usuario_nombre, new { @id = "Txtusuario_nombre" })
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_contraseña )
+    @Html.TextBoxFor(user => user.usuario.usuario_contraseña, new { @id = "Txtusuario_contraseña" })
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_razonsocial )
+    @Html.TextBoxFor(user => user.usuario.usuario_razonsocial, new { @id = "Txtusuario_razonsocial" })
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_ruc )
+    @Html.TextBoxFor(user => user.usuario.usuario_ruc, new { @id = "Txtusuario_ruc" })
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_email )
+    @Html.TextBoxFor(user => user.usuario.usuario_email, new { @id = "Txtusuario_email" })
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_telefono )
+    @Html.TextBoxFor(user => user.usuario.usuario_telefono, new { @id = "Txtusuario_telefono" })
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_foto_url )
+    @Html.TextBoxFor(user => user.usuario.usuario_foto_url, new { @id = "Txtusuario_foto_url" })
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_presentacion )
+    @Html.TextBoxFor(user => user.usuario.usuario_presentacion, new { @id = "Txtusuario_presentacion" })
+    <br />
+    @Html.LabelFor(user => user.usuario.activo )
+    @Html.TextBoxFor(user => user.usuario.activo, new { @id = "Txtactivo" , @maxlength = 1, @minlength = 1 })
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_creacion )
+    @Html.TextBoxFor(user => user.usuario.usuario_creacion, new { @id = "Txtusuario_creacion" })
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_modificacion )
+    @Html.TextBoxFor(user => user.usuario.usuario_modificacion, new { @id = "Txtusuario_modificacion" })
+    <br />
+    @Html.LabelFor(user => user.usuario.fecha_creacion )
+    @Html.TextBoxFor(user => user.usuario.fecha_creacion, new { @id = "Txtfecha_creacion" })
+    <br />
+    @Html.LabelFor(user => user.usuario.fecha_modificacion )
+    @Html.TextBoxFor(user => user.usuario.fecha_modificacion, new { @id = "Txtfecha_modificacion" })
+
+    <br />
+    <input type="button" class="btn btn-primary span2" value="Registrar" id="btn_Registrar" />
+    <input type="button" class="btn btn-warning span2" value="Salir" id="btn_Salir" />
+}   

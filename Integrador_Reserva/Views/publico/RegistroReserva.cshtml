@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "RegistroReserva";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RegistroReserva</h2>
+<form action="/Home/Index" method="post" id="formRegistroReserva">
+    <div class="container-fluid">
+        <section class="container">
+            <div class="container-page">
+                <div class="col-md-6">
+
+                    <div class="form-group col-lg-12">
+                        <h3 class="dark-grey">Datos de la Reserva</h3>
+                        <p>
+                            Cancha: la canchita
+                        </p>
+                        <p>
+                            Tipo: 6x6
+                        </p>
+                        <p>
+                            Servicios: estacionamiento, Bodega, Duchas
+                        </p>
+                        <p>
+                            Turno: 10 am - 11 am
+                        </p>
+                        <p>
+                            Día: 02 de agosto de 2017
+                        </p>
+                        <p>
+                            Precio: $ 15.00
+                        </p>
+                        <br />
+                    </div>
+                    <h3 class="dark-grey">Datos del Cliente</h3>
+
+                    <div class="form-group col-lg-12">
+                        <label>Nombre</label>
+                        <input type="text" name="" class="form-control" id="nombre" value="">
+                    </div>
+
+                    <div class="form-group col-lg-5">
+                        <label>Celular</label>
+                        <input type="number" name="" class="form-control" id="celular" value="" maxlength="9">
+                    </div>
+
+                    <div class="form-group col-lg-7">
+                        <label>Email Address</label>
+                        <input type="email" name="" class="form-control" id="email" value="">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <input type="checkbox" class="checkbox" id="visibilidad"/>Permitir visibilidad de reserva al publico
+                    </div>
+
+                    <div class="col-sm-6">
+                        <input type="checkbox" class="checkbox" id="invitacion"/>Recibir invitaciones para campeonatos
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group col-lg-12">
+                        <h3 class="dark-grey">Terminos en Condiciones</h3>
+                        <p>Estimado cliente,</p>
+                        <p>
+                            <b>sasd</b>
+                            A través de nuestro servicio de reservas on line usted está contratando la
+                            reserva de centros deportivos. El usuario comprende y acepta las siguientes condiciones:
+                        </p>
+                        <p>
+                            • Este servicio está dirigido a personas con la capacidad legal necesaria para contratar
+                            los servicios ofrecidos en ésta página web.
+                        </p>
+                        <p>
+                            • El cliente/usuario es responsable de la veracidad de los datos introducidos a la
+                            hora de realizar una reserva, DEPORTE ONLINE no se hace responsable de las consecuencias
+                            derivadas de una introducción falsa o errónea de los datos.
+                        </p>
+                        <p>• La reserva se efectua con un plazo de 48 horas de anticipación</p>
+                        <p>• Al efectuar la reserva el cliente tiene un plazo de 48 horas para realizar el pago y completar el proceso de reserva</p>
+                        <p>
+                            • En caso de cancelar una reserva, el cliente debe realizarlo 24 horas antes del dia
+                            fijado en la reserva para la correspondiente devolucion del pago
+                        </p>
+                        <p></p>
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <h3 class="dark-grey">Formas de Pago</h3>
+                        <div class="col-sm-2">
+                            Efectivo
+                        </div>
+                        <div class="col-sm-7">
+                            Visa - Mastercard
+                        </div>
+
+                        <div class="col-sm-6">
+                            cta BBVA : 110100203010
+                        </div>
+                        <div class="col-sm-6">
+                            cta BCP : 1011012111099
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</form>

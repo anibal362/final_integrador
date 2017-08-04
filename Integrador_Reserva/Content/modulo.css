@@ -1,0 +1,128 @@
+﻿.Admin .TableList { border: 0; width: 100%; clear: both; margin: 30px auto; }
+.Admin .TableList td { padding: 5px; border: 1px solid #525260; }
+
+.Admin .TableList .Alternate, .tablaReservaciones tr.Alternate { background-color: #f1f1f3; }
+.Admin .TableList .Header { border-style: none; color: #fff; font-family: 'exomediumitalic',Arial, sans-serif; font-size: 1.5em; line-height: 1em; background-color: #525260; height: 45px; text-align: center; }
+.Admin .TableList .Description { font-weight: bold; }
+.Admin .TableList .SubInfo { font-size: .85em; font-style: italic; }
+.Admin .TableList tr.Pagging > td { border: 0; padding: 0; }
+.Admin .TableList .Pagging table { font-size: 1.2em; border-collapse: collapse; margin: 1em 0; }
+.Admin .TableList .Pagging table td { border: 1px solid; font-family: 'exomediumitalic',Arial, sans-serif; line-height: 1em; padding: 0; text-align: center; vertical-align: middle; width: 1.5em; }
+.Admin .TableList .Pagging table a { color: #525260; display: block; }
+.Admin .TableList .Pagging span { background: #007eb3; color: #fff; display: block; padding: 0.25em; }
+
+.Admin .img-prev { margin-left: 20px; border: 1px solid #9a999d; -webkit-box-shadow: 1px 1px 5px 0px #BABAC4; -moz-box-shadow: 1px 1px 5px 0px #BABAC4; box-shadow: 1px 1px 5px 1px #BABAC4; }
+
+.Admin #Map { width: 100%; height: 350px; border: 1px solid #5e514e; box-sizing: border-box; z-index: 10; }
+.Admin #Coords { background-color: #fff; opacity: .75; color: #333; padding: 0 5px; border-radius: 5px; margin: 5px; font-weight: bold; font-size: .8em; }
+.Admin #MapToolBar { background-color: #fff; border-radius: 5px; padding: 3px; box-sizing: border-box; box-shadow: 0 0 8px rgba(0,0,0,0.4); pointer-events: visible; white-space: nowrap; width: 400px; overflow: hidden; height: 45px; }
+.Admin #MapToolBar input[type='text'] { font-style: italic; color: #525260; }
+
+.Admin .Center { text-align: center; margin: 0 auto; }
+.Admin .Hide { display: none; }
+.Admin .Loading { background: url(images/loader.gif) center center no-repeat #ffffff; width: 25px; height: 25px; margin: 0 auto; }
+
+.Admin .FSearchResults { background-color: #fff; position: absolute; left: 0; top: 0; padding: 7px 3px 3px 5px; width: 305px; border: 1px solid #525260; box-sizing: border-box; pointer-events: visible; }
+.Admin .FSearchResults ul { padding: 0; margin: 0; list-style: none; }
+.Admin .FSearchResults li { margin: 10px auto; }
+
+.Admin .ServiceList { list-style: none; padding: 0; margin: 0; }
+.Admin .ServiceList li { display: inline; }
+
+.tablaReservaciones { border-collapse: collapse; width: 100%; }
+.tablaReservaciones td, .tablaReservaciones th { border: 1px solid #fff; width: 13%; }
+.tablaReservaciones tr td:first-child, .tablaReservaciones tr th:first-child { width: 9%; }
+
+.tablaReservaciones td a { display: table; height: 37px; width: 100%; }
+.tablaReservaciones td a span { display: table-cell; position:Relative; text-align: center; vertical-align: middle;width: 100% }
+  .tablaReservaciones td a span img.observation { top:5px;position:absolute;right:5px}
+.tablaReservaciones td a:hover { opacity: 1 !important; }
+.tablaReservaciones td a.reservation-free { background: rgba(7, 130, 51,0.8); color: #fff; opacity: 0.5; }
+.tablaReservaciones td a.reservation-0 { background: rgba(0, 51, 102,0.8); color: #fff; opacity: 0.85; }
+.tablaReservaciones td a.reservation-1 { background: rgba(255, 0, 0,0.8); color: #fff; opacity: 0.85; }
+.tablaReservaciones td a.reservation-2 { background: rgba(170, 200, 0,0.8); color: #fff; opacity: 0.7; }
+
+.tablaReservaciones th { border-style: none; color: #fff; font-family: 'exomediumitalic',Arial, sans-serif; font-size: 1.5em; line-height: 1em; background-color: #525260; height: 45px; text-align: center; }
+.tablaReservaciones tr td:first-child { font-size: 1.2em; font-weight: bold; padding: 10px 2px; text-align: center; }
+
+.legend, .ComplexDetail .legend { float: right; font-weight: bold; padding: 5px; }
+.legend span { display: inline-block; margin-left: 40px; position: Relative; }
+.legend span::after { content: ""; display: block; height: 1em; left: -20px; position: absolute; top: 1px; width: 1em; }
+.legend .free::after { background: rgba(7, 130, 51,0.8); }
+.legend .one-time::after { background: rgba(0, 51, 102,0.8); }
+.legend .always::after { background: rgba(255, 0, 0,0.8); }
+.legend .confirm::after { background: rgba(170, 200, 0,0.8); }
+
+.ComplexDetail { text-align: center; }
+.ComplexDetail .padding3040 { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 30px 40px; width: 100%; }
+
+.ComplexDetail .cover { background-position: 50% 100%; background-repeat: no-repeat; background-size: cover; display: block; clear: both; height: 400px; margin-top: -160px; position: Relative; width: 100%; }
+.centradaMovil .ComplexDetail .cover { margin-top: 0; }
+
+.ComplexDetail .padding3040 > div { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: block; text-align: left; }
+
+.ComplexDetail .cover .title { bottom: 30px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; overflow: hidden; padding: 0 50px; position: absolute; text-align: left; text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); width: 100%; }
+.ComplexDetail .cover .title h1 { color: #fff; display: inline-block; font-size: 4.65em; font-weight: 100; letter-spacing: initial; margin: 0 0 0.15em; }
+.ComplexDetail .cover .title h3 { color: #fff; font-weight: 100; margin: 0; }
+.ComplexDetail .logo-Complex { float: left; margin: 0 30px 20px 0; text-align: Center; width: 220px; }
+.ComplexDetail .logo-Complex img { width: 100%; }
+.ComplexDetail .info-Complex { float: left; line-height: 1.5em; max-width: 300px; padding: 10px 0 20px; width: auto; }
+.ComplexDetail .info-Complex .icons { clear: both; margin-top: 2em; }
+.ComplexDetail .info-Complex .icons img { float: left; margin-right: 1px; width: 45px; }
+
+.ComplexDetail .mapWrapper { float: right; position: relative; max-width: 350px; z-index: 1; width: 100%; }
+.ComplexDetail .mapWrapper:after { content: ""; position: absolute; z-index: -1; -moz-box-shadow: 0 0.5em 1.2em rgba(0,0,0,0.3); -webkit-box-shadow: 0 0.5em 1.2em rgba(0,0,0,0.3); box-shadow: 0 0.5em 1.2em rgba(0,0,0,0.3); bottom: 0; height: 20%; -moz-border-radius: 100%; border-radius: 100%; left: 5%; right: 5%; width: 90%; }
+
+.ComplexDetail .mapWrapper #miniMap { height: 175px; width: 100%; }
+
+.ComplexDetail .padding3040 .courtsPanels { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; clear: both; float: none; padding: 20px 0; }
+.ComplexDetail .courtsPanels > div { border: 1px solid #c8c8d0; border-top: 0; margin-top: -18px; overflow: auto; padding: 20px; }
+.ComplexDetail .courtsPanels > div .prices { float: right; font-size: 1.25em; }
+.ComplexDetail .courtsPanels > div .prices img { margin-left: 10px; }
+
+.ComplexDetail .courtsPanels > div .facilities { float: left; }
+.ComplexDetail .courtsPanels > div .facilities span.players { background: url(/Portals/0/Fg_Module/Services_Icons/numero_jugadores.png); color: #000; display: inline-block; font-family: 'exomediumitalic',Arial, sans-serif; font-size: 1.5em; font-weight: bold; height: 30px; margin-right: 7px; padding-top: 15px; text-align: center; width: 55px; }
+.ComplexDetail .courtsPanels > div .facilities img { margin-right: 10px; vertical-align: top; }
+
+.ComplexDetail .courtsPanels > div .reservationTable { border-collapse: collapse; clear: both; width: 100%; }
+.ComplexDetail .courtsPanels > div .reservationTable td, .ComplexDetail .courtsPanels > div .reservationTable th { border: 1px solid #fff; height: 1em; text-align: Center; width: 13%; }
+.ComplexDetail .reservationTable tr td:first-child, .ComplexDetail .reservationTable tr th:first-child { width: 9%; }
+.ComplexDetail .courtsPanels > div .reservationTable tr th { background: #525260; color: #fff; font-family: 'exomediumitalic',Arial, sans-serif; font-size: 1.5em; padding: 5px; text-transform: capitalize; }
+.ComplexDetail .courtsPanels > div .reservationTable tr td.reservation-free { background: rgba(7, 130, 51,0.8); color: #fff; opacity: 0.5; }
+.ComplexDetail .courtsPanels > div .reservationTable tr td.reservation-0 { background: rgba(0, 51, 102,0.8); color: #fff; opacity: 0.85; }
+.ComplexDetail .courtsPanels > div .reservationTable tr td.reservation-1 { background: rgba(255, 0, 0,0.8); color: #fff; opacity: 0.85; }
+.ComplexDetail .courtsPanels > div .reservationTable tr td.reservation-2 { background: rgba(170, 200, 0,0.8); color: #fff; opacity: 0.7; }
+
+
+@media screen and (max-width: 1024px) {
+  .ComplexDetail .cover { height: 300px; }
+    .ComplexDetail .cover .title { text-align: center; }
+}
+
+@media screen and (max-width: 768px) {
+  .tablaReservaciones th { font-size: 1em;}
+  .tablaReservaciones tr td:first-child { font-size: 1em;}
+    .tablaReservaciones td a span img.observation { width:27.5%}
+
+
+  .ComplexDetail .padding3040 { padding: 30px 5%; }
+    .ComplexDetail .padding3040 .info-Complex, .ComplexDetail .padding3040 .logo-Complex { display: inline-block; float: none; }
+  .ComplexDetail .mapWrapper { display: block; float: none; margin: auto; }
+  .ComplexDetail .courtsPanels > div .reservationTable tr th { font-size: 1em; font-weight: 300; }
+    .ComplexDetail .courtsPanels > div .reservationTable tr th span { display: block; font-size: 1.5em; }
+}
+
+@media screen and (max-width: 480px) {
+  .ComplexDetail .padding3040 .logo-Complex { margin: 0 0 20px 0; }
+  .ComplexDetail .courtsPanels > div { padding: 20px 0; }
+    .ComplexDetail .courtsPanels > div .facilities, .ComplexDetail .courtsPanels > div .prices { padding: 10px 20px; }
+    .ComplexDetail .courtsPanels > div .reservationTable tr td { font-size: 0.75em; }
+    .ComplexDetail .courtsPanels > div .facilities span.players { background-size: 40px; font-size: 1.2em; height: 23px; margin-right: 5px; padding-top: 8px; width: 40px; }
+    .ComplexDetail .courtsPanels > div .facilities img { height: 30px; }
+    .ComplexDetail .courtsPanels > div .prices img { width: 25px; }
+}
+
+@media screen and (max-width: 380px) {
+  .ComplexDetail .courtsPanels > div .facilities, .ComplexDetail .courtsPanels > div .prices { clear: both; display: block; float: none; }
+}
+

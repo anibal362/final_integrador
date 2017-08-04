@@ -1,0 +1,124 @@
+﻿@model Integrador_Reserva.Models.UsuarioCanchaViewModel
+@{
+    ViewBag.Title = "AñadirCancha";
+}
+<br /><br /><br />
+<div>
+    <img src="http://www.forumlibertas.com/wp-content/uploads/2017/04/futbol-2000x1218-710x434.jpg" width="100%" height="350" class="alert-success" />
+</div>
+@using (Html.BeginForm("AñadirCancha", "Publico", FormMethod.Post, new { enctype = "multipart/form-data", @id = "frm-anadirCancha", @class = "well" }))
+{
+    <center><h2>Registra tu Cancha</h2></center>
+    <div>
+        <form class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label for="name">Nombre Cancha</label>
+                        @Html.TextBoxFor(cancha => cancha.cancha.cancha_nombre,
+                                new
+                                {
+                                    @class = "form-control input-md",
+                                    @placeholder = "Ingrese el nombre de la cancha",
+                                    @Value = "",
+                                    @required = ""
+                                })
+                        <span class="help-block">*Obligatorio</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label for="name">Distrito</label>
+                        @Html.DropDownListFor(cancha => cancha.cancha.cancha_distrito_id,
+                                new SelectList(Model.listaDistritos, "distrito_id", "distrito"),
+                                new { @class = "form-control input-md" })
+                        <span class="help-block">*Ingrese Distrito</span>
+                    </div>
+                </div>
+
+                
+                <!-- precio-->
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <label for="Costo">Costo </label>
+                        @Html.TextBoxFor(cancha => cancha.cancha.cancha_PrecioxHora,
+                            new
+                            {
+                                @class = "form-control input-md",
+                                @placeholder = "Ingrese el precio",
+                                @Value = "",
+                                @required = ""
+                            })
+                        <span class="help-block">*Ingres el Costo de la Cancha</span>
+                    </div>
+                </div>
+
+                <!--Tipo de Cancha -->
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <label for="selectbasic">Tipo Cancha</label>
+                        @Html.DropDownListFor(cancha => cancha.cancha.cancha_tipo_id,
+                            new SelectList(Model.listaTipos, "tipo_id", "tipo"),
+                            new { @class = "form-control" })
+                        <span class="help-block">*Ingrese Capacidad</span>
+                    </div>
+                </div>
+
+                <!--Descripcion de Cancha -->
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label for="selectbasic">Descripción de la Cancha</label>
+                        @Html.TextBoxFor(cancha => cancha.cancha.cancha_descripcion,
+                                new
+                                {
+                                    @class = "form-control input-md",
+                                    @placeholder = "Ingrese la dirección",
+                                    @Value = "",
+                                    @required = ""
+                                })
+                        <span class="help-block">*Ingrese Capacidad</span>
+                    </div>
+                </div>
+
+                <!--Imagen -->
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label for="imagen">Imagen</label>
+
+                        <input id="imagen" name="file" class="input-file" type="file" required="">
+
+                        <span class="help-block">*Ingrese imagen</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-8">
+                        <button id="save" name="guardar" class="btn btn-success">Registrar</button>
+                        <button id="cancel" name="cancelar" class="btn btn-danger">Calcelar</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+}
+
+<div class="samp">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <p>
+        <h5>*Terminos y Condiciones</h5>
+        Todas las ventas son en firme y no se realizaran anulaciónes, reembolsos o
+        cambios de fecha u horario de la reserva una vez que se haya confirmado su orden.
+        Si hay un aplazamiento de fecha o cambio de hora del evento, por una razón inherente al Comité,
+        el encargado de la cancha efectuará el reporte correspondiente al administrador autorizado por LDA;
+        para valorar la asignación de un nuevo horario de uso, en dependencia de la disponibilidad existente,
+        el cual será comunicado al cliente por la vía telefónica. LDA;, por razones de fuerza mayor o de interés
+        público, tiene la facultad de cancelar cualquier reservación y efectuar el reembolso o reprogramación
+        correspondiente, siempre y cuando lo haga en un plazo no mayor a 72 horas antes del servicio programado.
+    </p>
+</div>
+
+
+
+

@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "RegistroCliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+
+    <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Registro de Cliente</div>
+            </div>
+            <div class="panel-body">
+
+                <form action="/Home/Index" class="form-horizontal" method="post">
+
+                    <div id="div_id_username" class="form-group required">
+                        <label for="id_username" class="control-label col-md-4  requiredField">
+                            Nombre
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md  textinput textInput form-control"
+                                   id="id_username" maxlength="30" name="username"
+                                   placeholder="Ingrese su nombre completo" style="margin-bottom: 10px"
+                                   type="text" />
+                        </div>
+                    </div>
+                    <div id="div_id_password1" class="form-group required">
+                        <label for="id_password1" class="control-label col-md-4  requiredField">
+                            Contraseña
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md textinput textInput form-control"
+                                   id="id_password" name="password"
+                                   placeholder="Ingrese una contraseña" style="margin-bottom: 10px"
+                                   type="password" />
+                        </div>
+                    </div>
+                    <div id="div_id_username" class="form-group required">
+                        <label for="id_username" class="control-label col-md-4  requiredField">
+                            Razon Social
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md  textinput textInput form-control"
+                                   id="razon_social" maxlength="30" name="razon_social"
+                                   placeholder="Ingrese su Razon Social" style="margin-bottom: 10px"
+                                   type="text" />
+                        </div>
+                    </div>
+
+                    <div id="div_id_email" class="form-group required">
+                        <label for="id_email" class="control-label col-md-4  requiredField">
+                            RUC
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md emailinput form-control" id="ruc"
+                                   name="ruc" placeholder="Ingrese su número de RUC"
+                                   style="margin-bottom: 10px" type="email" />
+                        </div>
+                    </div>
+
+                    <div id="div_id_email" class="form-group required">
+                        <label for="id_email" class="control-label col-md-4  requiredField">
+                            E-mail
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md emailinput form-control" id="id_email"
+                                   name="email" placeholder="Ingrese su email"
+                                   style="margin-bottom: 10px" type="email" />
+                        </div>
+                    </div>
+
+                    <div id="div_id_number" class="form-group required">
+                        <label for="id_number" class="control-label col-md-4  requiredField">
+                        Télefono
+                        <span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md textinput textInput form-control"
+                                   id="telefono" name="telefono" placeholder="Ingrese su teléfono"
+                                   style="margin-bottom: 10px" type="text" />
+                        </div>
+                    </div>
+
+                    <div id="div_id_name" class="form-group required">
+                        <label for="id_name" class="control-label col-md-4  requiredField">
+                        Presentación<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input class="input-md textinput textInput form-control" 
+                                   id="presentacion" name="presentacion" 
+                                   placeholder="Your Frist name and Last name" 
+                                   style="margin-bottom: 10px" type="text" />
+                        </div>
+                    </div>
+
+                    <div id="div_id_gender" class="form-group required">
+                        <label for="id_gender" class="control-label col-md-4  requiredField">
+                        Género<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 " style="margin-bottom: 10px">
+                            <label class="radio-inline">
+                             <input type="radio" name="gender" id="id_gender_1" value="M"
+                                     style="margin-bottom: 10px">Masculino</label>
+                            <label class="radio-inline"> 
+                             <input type="radio" name="gender" id="id_gender_2" value="F"
+                                     style="margin-bottom: 10px">Femenino</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="aab controls col-md-4 "></div>
+                        <div class="controls col-md-8 ">
+                            <input type="submit" name="Signup" value="Registrar"
+                                    class="btn btn-primary btn btn-info" id="submit-id-signup" />
+                            or 
+                            <input type="button" name="Signup" value="Sign Up with Facebook" 
+                                   class="btn btn btn-primary" id="button-id-signup" />
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

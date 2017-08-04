@@ -1,0 +1,37 @@
+﻿@model Integrador_Reserva.Models.UsuarioCanchaViewModel
+@{
+    ViewBag.Title = "Resultado Busqueda";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <h2 class="text-center">Resultado de búsqueda</h2>
+        <hr />
+        <strong>Se encontró @Html.Label(Model.listaCancha.Count.ToString()) resultado(s)</strong>
+    </div>
+    <div class="row">
+        
+        @foreach (var x in Model.listaCancha)
+        { 
+            <div class="col-sm-6 col-md-5">
+                <div class="thumbnail">
+                    <h4>
+                        @Html.DisplayFor(a => x.cancha_nombre)
+                        <span class="label label-info info">
+                            <span data-toggle="tooltip" title="Distrito">@Html.DisplayFor(a => x.cancha_distrito) <b class="glyphicon glyphicon-eye-open"></b></span>
+                            <span data-toggle="tooltip" title="Tipo de cancha">@Html.DisplayFor(a => x.cancha_tipo) <b class="glyphicon glyphicon-inbox"></b></span>                            
+                        </span>
+                    </h4>
+                    <img src="~/Sources/img/@Html.DisplayFor(a => x.cancha_ImagenUrl)" style="width:500px; height:350px; " />
+                    <a href="@Url.Action("VerCalendarioCancha", null, new { idCancha = x.cancha_id, controller = "publico" }, Request.Url.Scheme)" class="btn btn-primary col-xs-12" role="button">Reservar</a>
+                   
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        }
+        
+    </div>
+</div>
+

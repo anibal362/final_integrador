@@ -1,0 +1,223 @@
+﻿@model Integrador_Reserva.Models.CalendarioViewModel
+@{
+    ViewBag.Title = "RegistroCliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/fullcalendar.css" rel="stylesheet" />
+
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+<script src="~/Scripts/moment.min.js"></script>
+<script src="~/Scripts/fullcalendar.min.js"></script>
+<script src="~/Scripts/locale-all.js"></script>
+<style>
+    input,
+    select,
+    textarea {
+        max-width: 100% !important;
+    }
+
+    .margin-10 {
+        margin-bottom: 10px;
+    }
+
+    sup {
+        color: #F05353;
+        font-size: 14px;
+        top: -1px;
+        left: 2px;
+    }
+</style>
+
+<div class="container">
+    <form id="frmReserva">
+        <div class="row">
+            <div class="col-6 col-lg-6">
+                <h3><b>@Model.Cancha.cancha_nombre</b> </h3> </br>
+                <b>Ciudad: </b> @Model.Cancha.cancha_distrito </br>
+                <b>Tipo: </b> @Model.Cancha.cancha_tipo </br>
+                <b>Precio x Hora: S/ </b> @Model.Cancha.Precio </br>
+                <b>Descripción: </b> @Model.Cancha.cancha_descripcion </br> </br>
+                <img src="~/sources/img/servicios.jpg" />
+            </div>
+            <div class="col-6 col-lg-6" style="margin-top:10px;">
+                <img src="~/sources/img/ubicacion.jpg" />
+            </div>
+            <div class="col-lg-12">
+                <div id="calendar" style="margin-top:20px;">
+                </div>
+            </div>
+            @Html.HiddenFor(m => m.Cancha.cancha_id)
+            @Html.HiddenFor(m => m.Cancha.Precio)
+            @Html.HiddenFor(m => m.Cancha.cancha_nombre)
+            <input type="hidden" value="@Model.Cancha.cancha_id" id="cancha_id" />
+            <input type="hidden" value="@DateTime.Now.ToString("yyy,MM,dd")" id="FechaHoy" />
+        </div>
+
+        <div class="modal fade bs-example-modal-lg" id="myModalReserva" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="myModalLabel"> <b>Reserva de Cancha - @Html.DisplayFor(m => m.Cancha.cancha_nombre)</b></h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row margin-10">
+                            <div class="col-md-6">
+                                <label class="control-label">Fecha y Hora Inicio:</label>
+                                @Html.TextBoxFor(m => m.Reserva.Reserva_FechaInicio, new { @class = "form-control", @readonly = "readonly" })
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label">Fecha y Hora Fin:</label>
+                                @Html.TextBoxFor(m => m.Reserva.Reserva_FechaFin, new { @class = "form-control", @readonly = "readonly" })
+                            </div>
+                        </div>
+                        <div class="row margin-10">
+                            <div class="col-md-6">
+                                <label class="control-label">Nombre Cliente:<sup>*</sup></label>
+                                @Html.TextBoxFor(m => m.Cliente.Nombre, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label">Nro Documento:<sup>*</sup></label>
+                                @Html.TextBoxFor(m => m.Cliente.DNI, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row margin-10">
+                            <div class="col-md-6">
+                                <label class="control-label">E-mail:<sup>*</sup></label>
+                                @Html.TextBoxFor(m => m.Cliente.Email, new { @class = "form-control", @type = "email" })
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label">Celular/Telf.:<sup>*</sup></label>
+                                @Html.TextBoxFor(m => m.Cliente.Celular, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row margin-10">
+                            <div class="col-md-12">
+                                <label class="control-label">Título Reserva:<sup>*</sup></label>
+                                @Html.TextBoxFor(m => m.Reserva.Descripcion, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row margin-10">
+                            <div class="col-md-6">
+                                <label class="control-label">Tipo Pago:<sup>*</sup></label>
+                                @Html.TextBoxFor(m => m.Reserva.TipoPago, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label">Total a Pagar:<sup>*</sup></label>
+                                @Html.TextBoxFor(m => m.Reserva.PrecioTotal, new { @class = "form-control", @readonly = "readonly" })
+                            </div>
+                        </div>
+                        <div class="row margin-10">
+                            <div class="col-md-12">
+                                <label class="control-label">
+                                    @Html.CheckBoxFor(m => m.Reserva.AceptaTerminos)
+                                    Acepta Términos y Condiciones <sup>*</sup>
+                                </label>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnPopupCancel" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" id="btnPopupSave" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!--Modal Registrar Reserva-->
+
+<script>
+    $(function () {
+        var id_Cancha = $("#cancha_id").val();
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            lang: 'es',
+            minTime: "06:00:00",
+            maxTime: "24:00:00",
+            slotMinutes: 60,
+            defaultView: 'agendaWeek',
+            editable: true,
+            allDaySlot: false,
+            selectable: true,
+            events: '/Publico/GetDiaryEvents?cancha_id=' + id_Cancha,
+            eventClick: function (calEvent, jsEvent, view) {
+                alert('Codigo reserva: ' + calEvent.id
+                    + "\nTítulo: " + calEvent.title
+                    + "\nSolicito: " + calEvent.ClienteNombre);
+            },
+            select: function (start, end, allDay) {
+                LimpiarModal();
+                var fechaini = $.fullCalendar.formatDate(start, 'DD/MM/YYYY');
+                var fechafin = $.fullCalendar.formatDate(end, 'DD/MM/YYYY');
+                var horaini = $.fullCalendar.formatDate(start, 'HH:mm');
+                var horafin = $.fullCalendar.formatDate(end, 'HH:mm');
+                var fechahoy_Date = new Date($('#FechaHoy').val());
+                var fechaini_Date = new Date($.fullCalendar.formatDate(start, 'YYYY,MM,DD'));
+
+                if (fechaini_Date >= fechahoy_Date) {
+                    if ($('#cancha_id').val() != "") {
+                        $("#Reserva_Reserva_FechaInicio").val(fechaini + " " + horaini);
+                        $("#Reserva_Reserva_FechaFin").val(fechafin + " " + horafin);
+                        var horaInicio = horaini.split(":");
+                        var horaFin = horafin.split(":");
+                        var TotalHoras = parseInt(horaFin[0]) - parseInt(horaInicio[0]);
+                        if (TotalHoras == 0) {
+                            TotalHoras = 1;
+                        }
+                        $("#Reserva_PrecioTotal").val("S/ " + parseFloat($("#Cancha_Precio").val() * TotalHoras).toFixed(2))
+                        $("#myModalReserva").modal();
+                    } else {
+                        alert("Debe seleccionar una cancha.");
+                    }
+                } else {
+                    alert("La fecha de inicio debe ser mayo a la de hoy.");
+                }
+            }
+        });
+
+        $("#btnPopupSave").click(function () {
+            var infoForm = $("#frmReserva");
+            //Llamar aquí a un mensaje de Guardando
+            $.ajax({
+                url: "/publico/GuardarReserva",
+                type: "POST",
+                data: infoForm.serialize(),
+                dataType: "json",
+                success: function (result) {
+                    if (result == 1) {
+                        alert("Se registró correctamente su RESERVA (Se le enviará un correo)")
+                        $('#myModalReserva').modal('hide');
+                        LimpiarModal();
+                        $('#calendar').fullCalendar('refetchEvents');
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(errorThrown);
+                    LimpiarModal();
+                }
+            })
+        });
+
+        var LimpiarModal = function () {
+            $("#Reserva_Reserva_FechaInicio").val();
+            $("#Reserva_Reserva_FechaFin").val();
+            $("#Cliente_Nombre").val();
+            $("#Cliente_DNI").val();
+            $("#Cliente_Email").val();
+            $("#Cliente_Celular").val();
+            $("#Reserva_Descripcion").val();
+            $("#Reserva_TipoPago").val();
+            $("#Reserva_PrecioTotal").val();
+            $("#Reserva_AceptaTerminos").prop('checked', false);
+        }
+    })
+</script>

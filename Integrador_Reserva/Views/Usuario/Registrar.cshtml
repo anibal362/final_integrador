@@ -1,0 +1,41 @@
+﻿@model Integrador_Reserva.Models.UsuarioViewModel
+@{
+    ViewBag.Title = "Registrar";
+}
+<script src="~/Scripts/Usuario/registrarUsuario.js"></script>
+<h2>Registrar Usuario</h2>
+
+@using (Html.BeginForm("Registrar", "Usuario", FormMethod.Post, new { @id = "frm-registroUsuario", @class = "well" }))
+{
+    <h2>Registro de Usuarios</h2>
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_nombre)
+    @Html.TextBoxFor(user => user.usuario.usuario_nombre)
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_contraseña)
+    @Html.TextBoxFor(user => user.usuario.usuario_contraseña)
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_razonsocial)
+    @Html.TextBoxFor(user => user.usuario.usuario_razonsocial)
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_ruc)
+    @Html.TextBoxFor(user => user.usuario.usuario_ruc)
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_email)
+    @Html.TextBoxFor(user => user.usuario.usuario_email)
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_telefono)
+    @Html.TextBoxFor(user => user.usuario.usuario_telefono)
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_foto_url)
+    @Html.TextBoxFor(user => user.usuario.usuario_foto_url)
+    <br />
+    @Html.LabelFor(user => user.usuario.usuario_presentacion)
+    @Html.TextBoxFor(user => user.usuario.usuario_presentacion)
+    <br />
+    
+
+    <br />
+    <input type="button" class="btn btn-primary span2" value="Registrar" id="btn_Registrar" />
+    <input type="button" class="btn btn-warning span2" value="Salir" id="btn_Salir" />
+}   
